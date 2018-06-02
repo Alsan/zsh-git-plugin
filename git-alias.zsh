@@ -27,8 +27,12 @@ alias 'tag=git tag'
 
 function diff() {
 	if [ $is_inside_git_repo ]; then
-		git diff
+		if (( $# == 0 )); then
+			git diff
+		else
+			git diff $1
+		fi
 	else
-		diff
+		diff $1 $2
 	fi
 }
