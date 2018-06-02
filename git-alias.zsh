@@ -12,12 +12,12 @@ alias 'commit=git commit -m'
 alias 'commit-all=git commit -am'
 alias 'commit-amend-msg=git commit --amend -m'
 alias 'delete=git rm'
-alias 'diff=[ $is_inside_git_repo==true ] && git diff || merge'
 alias 'fetch=git fetch'
 alias 'forget=git rm --cached'
 alias 'init=git init'
 alias 'log=git log --oneline --graph --decorate'
 alias 'resolve=git mergetool'
+alias 'merge=git merge'
 alias 'pull=git pull'
 alias 'push=git push'
 alias 'remote=git remote'
@@ -25,3 +25,10 @@ alias 'reset=git reset'
 alias 'status=[ $is_inside_git_repo==true ] && git status || status'
 alias 'tag=git tag'
 
+function diff() {
+	if [ $is_inside_git_repo ]; then
+		git diff
+	else
+		diff
+	fi
+}
