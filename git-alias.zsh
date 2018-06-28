@@ -1,4 +1,4 @@
-is_inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+__is_inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
 
 alias 'add=git add'
 alias 'add-all add -A'
@@ -26,7 +26,7 @@ alias 'status=[ $is_inside_git_repo==true ] && git status || status'
 alias 'tag=git tag'
 
 function diff() {
-	if [ $is_inside_git_repo ]; then
+	if [ "$__is_inside_git_repo" == "true" ]; then
 		if (( $# == 0 )); then
 			git diff
 		else
