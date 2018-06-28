@@ -36,3 +36,7 @@ function diff() {
 		diff $1 $2
 	fi
 }
+
+function ignore() {
+	git ignore $1 >> .gitignore
+}
