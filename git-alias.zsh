@@ -23,9 +23,12 @@ alias 'merge=git merge'
 alias 'pull=git pull'
 alias 'push=git push'
 alias 'remote=git remote'
+alias 'rebase=git rebase'
 alias 'reset=git reset'
 alias 'status=[ __get_is_inside_repo() ] && git status || status'
 alias 'tag=git tag'
+alias 'theirs=git pull -s recursive -X theirs'
+alias 'ours=git pull -s recursive -X ours'
 
 function diff() {
 	if [ __get_is_inside_git_repo() ]; then
@@ -35,7 +38,7 @@ function diff() {
 			git diff $@
 		fi
 	else
-		diff $1 $2
+		command diff $1 $2
 	fi
 }
 
