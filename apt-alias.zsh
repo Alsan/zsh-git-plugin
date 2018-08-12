@@ -1,4 +1,5 @@
 alias apt-list-installed="sudo dpkg --get-selections | awk '{print \$1}'"
+alias apt-add-missing-key="sudo apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys"
 
 function apt-repo-update() {
 	sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/$1" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
