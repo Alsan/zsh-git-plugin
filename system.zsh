@@ -1,3 +1,4 @@
+alias startup-list='systemd-analyze blame'
 alias service-list='sudo service --status-all'
 
 function service-start() {
