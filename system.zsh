@@ -1,5 +1,6 @@
 alias startup-list='systemd-analyze blame'
 alias service-list='sudo service --status-all'
+alias flatpak-clean='flatpak uninstall --all'
 
 function service-start() {
 	sudo service $1 start
