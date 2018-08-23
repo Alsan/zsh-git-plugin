@@ -49,5 +49,5 @@ function gi() {
 }
 
 function ignore() {
-	git ignore $1 >> .gitignore
+	echo "$1" >> .gitignore
 }
