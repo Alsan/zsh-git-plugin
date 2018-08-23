@@ -44,6 +44,10 @@ function diff() {
 	fi
 }
 
+function gi() { 
+	curl -L -s https://www.gitignore.io/api/\$@ ;
+}
+
 function ignore() {
 	git ignore $1 >> .gitignore
 }
