@@ -17,11 +17,11 @@ alias du='du -h -c'
 alias tmux='TERM=xterm-256color \tmux'
 
 # emulate bash PROMPT_COMMAND (only for zsh)
-precmd() { eval "$PROMPT_COMMAND" }
+#precmd() { eval "$PROMPT_COMMAND" }
 
 # open new terminal in same dir
-#PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
-#[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
+#PROMPT_COMMAND='pwd > "${HOME}/._cwd"'
+#[[ -f "${HOME}/._cwd" ]] && cd "$(< ${HOME}/._cwd)"
 
 function mcd () {
 	mkdir -p "$1" && cd "$1"
