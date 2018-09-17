@@ -1,6 +1,12 @@
 alias startup-list='systemd-analyze blame'
 alias service-list='sudo service --status-all'
 alias flatpak-clean='flatpak uninstall --all'
+alias pretty-json='python -m json.tool'
+alias decode-unicode='ascii2uni -a U -q'
+
+function sync-folder() {
+	tar cSpf - . | (cd $1 ; tar xvSpf - )
+}
 
 function service-start() {
 	sudo service $1 start
