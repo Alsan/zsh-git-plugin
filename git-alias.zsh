@@ -60,5 +60,9 @@ function diff() {
 }
 
 function ignore() {
+	curl -L -s https://www.gitignore.io/api/$@ >> .gitignore
+}
+
+function ignore.file() {
 	echo "$1" >> .gitignore
 }
